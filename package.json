@@ -1,0 +1,28 @@
+{
+  "name": "angular_js",
+  "version": "1.0.0",
+  "description": "\"Coursera lession on javascript course 1\"",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pramodacharya/angular_js.git"
+  },
+  "keywords": [
+    "coursera",
+    "javascript"
+  ],
+  "author": "Pramod Acharya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pramodacharya/angular_js/issues"
+  },
+  "homepage": "https://github.com/pramodacharya/angular_js#readme",
+  "devDependencies": {
+    "lite-server": "^2.4.0"
+  }
+}
