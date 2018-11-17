@@ -1,12 +1,17 @@
 {
   "name": "angular_js",
   "version": "1.0.0",
-  "description": "\"Coursera lession on javascript course 1\"",
+  "description": "This is a website for Ristorante Con Fusion, for Coursera lession in angular_js",
   "main": "index.html",
   "scripts": {
     "start": "npm run lite",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lite": "lite-server"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
   },
   "repository": {
     "type": "git",
