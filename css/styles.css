@@ -34,3 +34,6 @@
 .row{
     justify-content: center;
 }
+.row_not_centered{
+    justify-content: flex-start;
+}
