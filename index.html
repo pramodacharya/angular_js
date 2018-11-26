@@ -27,9 +27,49 @@
                     <li class="nav-item" ><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a> </li>
                     <li class="nav-item" ><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a> </li>
                 </ul>
+                <span class="navbar-text">
+                    <a data-toggle="modal" data-target="#loginModal"><span class="fa fa-sign-in"></span> Login</a>
+                </span>
             </div>
         </div>
     </nav>
+
+   <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="inputemail">Email Address</label>
+                                <input type="email" class="form-control form-control-sm sr-1" id="inputemail" placeholder="Enter email">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="password">Password</label>
+                                <input type="email" class="form-control form-control-sm sr-1" id="password" placeholder="Password">
+                            </div>
+                            <div class="col-sm-auto">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="password" placeholder="Password">
+                                    <label class="form-check-label" >Remember me</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary btn-sm ml-1" data-dismiss="modal">Sign In</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
@@ -37,12 +77,11 @@
                     <h1>Ristorante con Fusion</h1>
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                 </div>
-                <div class="col-12 col-sm-3 align-self-center">
+                <div class="col-12 col-sm-2 align-self-center">
                     <img src="img/logo.png" class="img-fluid">
                 </div>
-                <div class="col-12 col-sm-3 align-self-center">
-                  <a href="#reservationForm" class="btn btn-warning btn-lg"> Reserve Table
-                   </a>
+                <div class="col-12 col-sm align-self-center">
+                    <a role="button" href="#reservationForm" class="btn btn-block btn-warning nav-link" data-toggle="tooltip" data-html="true" title="Or Call us at <br><Strong> +852 123456</Strong></br>" data-placement="bottom">Reserve Table</a>
                    <!--  <button class="btn btn-warning reservationForm">Reserve Table</button>-->
                 </div>
             </div>
@@ -196,6 +235,11 @@
 <script src="node_modules/jquery/dist/jquery.slim.js"></script>
 <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
 </body>
 
 </html>
