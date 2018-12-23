@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LeaderserviceService } from './leaderservice.service';
+import { LeaderService } from './leader.service';
 
-describe('LeaderserviceService', () => {
+describe('LeaderService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: LeaderserviceService = TestBed.get(LeaderserviceService);
+    const service: LeaderService = TestBed.get(LeaderService);
     expect(service).toBeTruthy();
   });
 });
