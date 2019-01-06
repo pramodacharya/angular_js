@@ -6,14 +6,14 @@
     fxLayoutGap="10px" 
     fxLayoutGap.xs="0">
   
-  <div fxFlex="40">
+  <div fxFlex="50">
       <mat-card *ngIf="dish">
             <mat-card-header>
                 <mat-card-title>
                     <h3>{{dish.name| uppercase}}</h3>
                 </mat-card-title>
             </mat-card-header>
-            <img mat-card-image src={{dish.image}} alt={{dish.name}}>
+            <img mat-card-image src="{{baseURL + dish.image }}" alt={{dish.name}}>
             <mat-card-content>
                 <p>{{dish.description}}</p>
             </mat-card-content>
@@ -56,7 +56,7 @@
         </mat-form-field>
       </p>
         <p>
-           <mat-slider formControlName="rating" min="1" max="5" step="1" class="full-width" tickInterval="1" ></mat-slider>
+           <mat-slider formControlName="rating" min="1" max="5" step="1" thumbLabel  class="full-width" tickInterval="1" ></mat-slider>
         </p>
       <p>
         <mat-form-field class="full-width">
