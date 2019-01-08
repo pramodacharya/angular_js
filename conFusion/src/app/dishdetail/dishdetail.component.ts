@@ -2,18 +2,22 @@ import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+
 import { switchMap } from 'rxjs/operators';
 
 import { Dish } from '../shared/dish';
 import { Comment } from '../shared/comment';
 import { DishService } from '../services/dish.service';
-
+import { visibility } from '../animations/app.animation';
 
 
 @Component({
   selector: 'app-dishdetail',
   templateUrl: './dishdetail.component.html',
-  styleUrls: ['./dishdetail.component.scss']
+  styleUrls: ['./dishdetail.component.scss'],
+  animations: [
+        visibility()
+  ]
 })
 export class DishdetailComponent implements OnInit {
      @ViewChild('fform') commentFormDirective;
@@ -26,21 +30,20 @@ export class DishdetailComponent implements OnInit {
   comment: Comment;
   dishcopy: Dish;
   errMess: string;
+  visibility = 'shown';
   
   constructor(private dishservice: DishService,
     private route: ActivatedRoute,
     private location: Location, private fb: FormBuilder, @Inject('BaseURL') private baseURL) { 
-    this.createForm();
-    this.route.params
-      .pipe(switchMap((params: Params) => this.dishservice.getDish(params['id'])))
-      .subscribe(dish => { this.dish = dish; this.dishcopy = dish; this.setPrevNext(dish.id); },
-        errmess => this.errMess = <any>errmess );
     }
 
-  ngOnInit() {
+  ngOnInit() {  
+    this.createForm();
     this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
-    this.route.params.pipe(switchMap((params: Params) => this.dishservice.getDish(params['id'])))
-    .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); });
+    this.route.params
+      .pipe(switchMap((params: Params) => { this.visibility = 'hidden';return this.dishservice.getDish(params['id'])}))
+      .subscribe(dish => { this.dish = dish; this.dishcopy = dish; this.setPrevNext(dish.id); this.visibility = 'shown'; },
+        errmess => this.errMess = <any>errmess );
   }
   
   setPrevNext(dishId: string) {
