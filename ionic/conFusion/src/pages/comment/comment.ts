@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 import { Comment }  from '../../shared/comment';
-import { Comment }  from '../../shared/dish';
 
 
 /**

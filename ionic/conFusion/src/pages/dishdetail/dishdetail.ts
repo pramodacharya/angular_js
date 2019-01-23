@@ -83,7 +83,7 @@ export class DishdetailPage {
  openCommentForm(){ 
     let modal = this.modalController.create(CommentPage, {'dish': this.dish });   
     modal.present();
-    modal.onDidDismiss(dish =>{ this.dish =dish;  })
+    modal.onDidDismiss(dish =>{ this.dish = dish;  })
  }
   
 }
