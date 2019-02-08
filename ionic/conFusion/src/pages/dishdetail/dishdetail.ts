@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, ActionSheetController, LoadingController, ModalController  } from 'ionic-angular';
 import { Dish } from '../../shared/dish';
 import { Comment } from '../../shared/comment';
-
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { CommentPage } from '../comment/comment';
 
 import { FavoriteProvider } from '../../providers//favorite/favorite';
@@ -31,7 +31,8 @@ export class DishdetailPage {
      private toastCtrl: ToastController,
      private loadingCtrl: LoadingController,
      public actionSheetCtrl: ActionSheetController,
-     public modalController: ModalController) {
+     public modalController: ModalController,
+     private socialSharing: SocialSharing) {
      
     this.dish = navParams.get('dish');
     this.favorite = favoriteservice.isFavorite(this.dish.id);
@@ -73,6 +74,22 @@ export class DishdetailPage {
           role: 'cancel',
           handler: () => {
             console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Share via Facebook',
+          handler: () => {
+            this.socialSharing.shareViaFacebook(this.dish.name + ' -- ' + this.dish.description, this.BaseURL + this.dish.image, '')
+              .then(() => console.log('Posted successfully to Facebook'))
+              .catch(() => console.log('Failed to post to Facebook'));
+          }
+        },
+        {
+          text: 'Share via Twitter',
+          handler: () => {
+            this.socialSharing.shareViaTwitter(this.dish.name + ' -- ' + this.dish.description, this.BaseURL + this.dish.image, '')
+              .then(() => console.log('Posted successfully to Twitter'))
+              .catch(() => console.log('Failed to post to Twitter'));
           }
         }
       ]
