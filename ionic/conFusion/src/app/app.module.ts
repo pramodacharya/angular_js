@@ -10,6 +10,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { Network } from '@ionic-native/network/ngx';
+import { Camera } from '@ionic-native/camera/ngx';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -28,6 +29,7 @@ import { ProcessHttpmsgProvider } from '../providers/process-httpmsg/process-htt
 import { baseURL } from '../shared/baseurl';
 import { FavoriteProvider } from '../providers/favorite/favorite';
 import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { LoginPage } from '../pages/login/login';
     FavoritesPage,
     ReservationPage,
     CommentPage,
-    LoginPage
+    LoginPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ import { LoginPage } from '../pages/login/login';
     FavoritesPage,
     ReservationPage,
     CommentPage,
-    LoginPage
+    LoginPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
@@ -74,7 +78,8 @@ import { LoginPage } from '../pages/login/login';
     EmailComposer,
     LocalNotifications,
     SocialSharing,
-    Network
+    Network,
+    Camera
   ]
 })
 export class AppModule {}
