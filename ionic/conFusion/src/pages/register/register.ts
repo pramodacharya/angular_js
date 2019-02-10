@@ -1,6 +1,6 @@
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { Camera, CameraOptions } from '@ionic-native/camera/gx';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 
 /**
